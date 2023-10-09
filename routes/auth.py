@@ -7,18 +7,18 @@ from app import app, request, render_template, session, url_for, redirect, flash
 
 @app.route('/')
 def index_home():
-    session['a'] = 1
-    session['a'] = 2
-    session_data = dict(session)
-    return str(session_data)
-    #
-    # if session['auth'] is None:
-    #     session['auth'] = 'no'
-    #
-    # if session['auth'] == 'yes':
-    #     return render_template('index.html')
-    # else:
-    #     return redirect(url_for("index_login"))
+    # session['a'] = 1
+    # session['a'] = 2
+    # session_data = dict(session)
+    # return str(session_data)
+
+    if session['auth'] is None:
+        session['auth'] = 'no'
+
+    if session['auth'] == 'yes':
+        return render_template('index.html')
+    else:
+        return redirect(url_for("index_login"))
 
 
 @app.route('/login')
