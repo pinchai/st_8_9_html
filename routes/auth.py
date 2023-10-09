@@ -11,6 +11,7 @@ def index_home():
     # session['a'] = 2
     # session_data = dict(session)
     # return str(session_data)
+    #test 1234
 
     if session['auth'] is None:
         session['auth'] = 'no'
