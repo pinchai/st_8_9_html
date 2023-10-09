@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% include 'head.html' %}
+</head>
+<body>
+<h1>Welcome To Home Page</h1>
+<br>
+{% if session['auth'] == 'yes' %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+{% endif %}
+
+{% if session['auth'] == 'no' %}
+    <a href="{{ url_for('index_login') }}">Login</a>
+{% endif %}
+</body>
+</html>
